@@ -22,13 +22,13 @@ if (hygro_level == 0 or hygro_level == nil) then
   return commandArray
 end
 
--- check if VMC should start
+-- check if exhaust should switch to high speed
 if (otherdevices[DEVICE_SWITCH] == 'Off' and hygro_level >= HYGRO_LEVEL_ON) then
   print('Switching ' .. DEVICE_SWITCH .. ' ON as humidity level reached ' .. hygro_level .. '% [max set to ' .. HYGRO_LEVEL_ON .. '%]')
   commandArray[DEVICE_SWITCH] = 'On'
 end
 
--- check if VMC should stop
+-- check if exhaust should switch back to low speed
 if (otherdevices[DEVICE_SWITCH] == 'On' and hygro_level <= HYGRO_LEVEL_OFF) then
   print('Switching ' .. DEVICE_SWITCH .. ' OFF as humidity level down to ' .. hygro_level .. '% [min set to ' .. HYGRO_LEVEL_OFF .. '%]')
   commandArray[DEVICE_SWITCH] = 'Off'
