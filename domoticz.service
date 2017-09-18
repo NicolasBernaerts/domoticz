@@ -4,7 +4,7 @@
 [Service]
   User=domoticz
   Group=domoticz
-  ExecStart=/home/domoticz/domoticz -www 80 -sslwww 443
+  ExecStart=/home/domoticz/domoticz -daemon -www 80 -sslwww 443
   WorkingDirectory=/home/domoticz
   # Give the right to open priviliged ports. This allows you to run on a port <1024 without root permissions (user/group setting above)
   # The next line was previously working, so try this on older systems.
