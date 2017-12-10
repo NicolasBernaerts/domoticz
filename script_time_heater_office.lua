@@ -1,5 +1,6 @@
 --
--- Script to manage an exhaust FAN according to hygrometer level
+-- Script to manage an electrical heater with a fil pilote (french tech.)
+-- Heater is switched to comfort mode according to holiday period, selector switch and target temperature
 --
 -- Devices are :
 --  * HOLIDAY_PERIOD    : Virtual switch to declare holidays (everything is off)
