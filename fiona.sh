@@ -1,10 +1,8 @@
 do_stop()
 {
-        # Return
         #   0 if daemon has been stopped
         #   1 if daemon was already stopped
         #   2 if daemon could not be stopped
-        #   other if a failure occurred
         start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name $NAME
         RETVAL="$?"
         [ "$RETVAL" = 2 ] && return 2
