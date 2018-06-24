@@ -1,3 +1,5 @@
+#! /bin/bash
+
 do_stop()
 {
         #   0 if daemon has been stopped
