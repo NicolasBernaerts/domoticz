@@ -5,7 +5,7 @@ do_stop()
         #   2 if daemon could not be stopped
         start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name $NAME
         RETVAL="$?"
-        [ "$RETVAL" = 2 ] && return 2
+        [ ${RETVAL} = 2 ] && return 2
         # Wait for children to finish too if this is a daemon that forks
         start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 --exec $DAEMON
         [ "$?" = 2 ] && return 2
